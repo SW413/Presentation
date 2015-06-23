@@ -71,8 +71,8 @@
 \usepackage{listings}
 
 \lstset{language=[Sharp]C,
-  captionpos=b,            
-  columns=fixed,     
+  captionpos=b,
+  columns=fixed,
   numbers=left,
   numberstyle=\tiny,
   showspaces=false,
@@ -121,6 +121,16 @@
 \definecolor{redstrings}{rgb}{0.9,0,0}
 \usepackage{courier}
 \usepackage{listings}
+
+\lstset{ 
+    literate={ø}{{\o}}1
+         {æ}{{\ae}}1
+         {å}{{\aa}}1
+         {Ø}{{\O}}1
+         {Æ}{{\AE}}1
+         {Å}{{\AA}}1
+         {§}{{\S}}1
+}
 
 %%% Colour definitions %%%
 % Defines: gray
