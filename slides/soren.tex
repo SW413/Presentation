@@ -10,12 +10,12 @@
 
 \end{frame}
 
-\begin{frame}{Contextual Analysis}
+\begin{frame}[fragile]{Contextual Analysis}
 \framesubtitle{Module call}
 
 
 
-\begin{lstlisting}[float, floatplacement=H!, caption=The visit method for visiting a DeclarationNode in the code generator. ,frame=tlrb,label={lst:DeclarationNodeCodeGen}]
+\begin{lstlisting}[caption=The visit method for visiting a DeclarationNode in the code generator. ,frame=tlrb,label={lst:DeclarationNodeCodeGen}]
 @Override
 public String VisitDeclarationNode(DeclarationNode node) {
     String expr = "";
