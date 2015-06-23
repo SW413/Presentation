@@ -13,29 +13,38 @@
 \begin{frame}{Contextual Analysis}
 \framesubtitle{Module call}
 
+    \begin{lstlisting}
+ContextualAnalyser contextualAnalyser = new ContextualAnalyser(inputFile, errors);
+abstractSyntaxTree = contextualAnalyser.GenerateDecoratedASTFromParseTree(abstractSyntaxTree);
+    \end{lstlisting}
 
 
-\begin{lstlisting}[float, floatplacement=H!, caption=The visit method for visiting a DeclarationNode in the code generator. ,frame=tlrb,label={lst:DeclarationNodeCodeGen}]
-@Override
-public String VisitDeclarationNode(DeclarationNode node) {
-    String expr = "";
-    String complexType = "";
-    if (node.getExpression() != null){
-        resultVarStack.push(node.getVariable());
-        expr = visit(node.getExpression());
-        resultVarStack.pop();
-    }
+\end{frame}
 
-    if (node.getVariable().isComplex()) {
-        ...
-    }
-    if (expr.indexOf("sclManageArgsLaunchKernel
-    	(hardware, software, global_size, local_size") >= 0){
-        ...
-    }
+\begin{frame}{Contextual Analysis}
+\framesubtitle{Module call}
 
-    return complexType.length() > 0 ? complexType + expr :
-    (node.getVariable().toCcode() + " = " + expr + ";");
+\begin{lstlisting}
+public BaseASTNode GenerateDecoratedASTFromParseTree(BaseASTNode abstractSyntaxTree){
+
+  //Add potential imported function declarations
+  handleImports(abstractSyntaxTree);
+
+  //Scope check
+  SymbolTable symbolTable = new SymbolTable();
+  scopeCheck(abstractSyntaxTree, symbolTable);
+  //Type check
+  typeCheck(abstractSyntaxTree, symbolTable);
+
+  //Check for unused variables
+  errors.addAll(symbolTable.getUnusedVariables());
+
+  //Error Handling
+  ErrorReporter errorReporter = new ErrorReporter();
+  errorReporter.HandleErrors(errors, ErrorType.ALL);
+
+  return abstractSyntaxTree;
 }
 \end{lstlisting}
+
 \end{frame}
