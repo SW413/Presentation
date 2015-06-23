@@ -10,7 +10,7 @@
 
 \end{frame}
 
-\begin{frame}{Contextual Analysis}
+\begin{frame}[fragile]{Contextual Analysis}
 \framesubtitle{Module call}
 
     \begin{lstlisting}
@@ -21,8 +21,9 @@ abstractSyntaxTree = contextualAnalyser.GenerateDecoratedASTFromParseTree(abstra
 
 \end{frame}
 
-\begin{frame}{Contextual Analysis}
-\framesubtitle{Module call}
+\begin{frame}[fragile]{Contextual Analysis}
+\subsection{Contextual Analysis}
+\framesubtitle{The Module}
 
 \begin{lstlisting}
 public BaseASTNode GenerateDecoratedASTFromParseTree(BaseASTNode abstractSyntaxTree){
@@ -44,6 +45,36 @@ public BaseASTNode GenerateDecoratedASTFromParseTree(BaseASTNode abstractSyntaxT
   errorReporter.HandleErrors(errors, ErrorType.ALL);
 
   return abstractSyntaxTree;
+}
+\end{listing}
+\end{frame}
+
+\begin{frame}[fragile]{Scope Checking}
+\framesubtitle{Creating Variables}
+\subsection{Scope Checking}
+
+\begin{lstlisting}[caption=The visit method for visiting a DeclarationNode in the code generator. ,frame=tlrb,label={lst:DeclarationNodeCodeGen}]
+@Override
+public String VisitDeclarationNode(DeclarationNode node) {
+String expr = "";
+String complexType = "";
+if (node.getExpression() != null){
+resultVarStack.push(node.getVariable());
+expr = visit(node.getExpression());
+resultVarStack.pop();
+}
+
+if (node.getVariable().isComplex()) {
+...
+}
+if (expr.indexOf("sclManageArgsLaunchKernel
+(hardware, software, global_size, local_size") >= 0){
+...
+}
+
+return complexType.length() > 0 ? complexType + expr :
+(node.getVariable().toCcode() + " = " + expr + ";");
+
 }
 \end{lstlisting}
 
