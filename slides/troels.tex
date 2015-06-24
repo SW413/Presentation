@@ -1,3 +1,34 @@
+\section{Semantics}
+
+\begin{frame}{Semantics}
+\framesubtitle{Type Checking}
+
+\begin{itemize}
+  \item Lack of Type checking in semantics
+  \item Matrices and Vectors
+\end{itemize}
+
+\begin{equation}
+\small
+\frac { { e }_{ v },st\vdash { a }_{ 1 }{ \rightarrow  }_{ A }{ v }_{ 1 }\quad { e }_{ v },st\vdash { a }_{ 2 }{ \rightarrow  }_{ A }{ v }_{ 2 } }{ { e }_{ v },st\vdash { a }_{ 1 }+{ a }_{ 2 }{ \rightarrow  }_{ A }{ v } } ,\begin{matrix} v={ v }_{ 1 }+{ v }_{ 2 }, \\ Typeof({ a }_{ 1 }) = Typeof({ a }_{ 2 }) \end{matrix}
+\end{equation}
+\end{frame}
+
+\begin{frame}{Booleans}
+\framesubtitle{Booleans allowed in boolean expression}
+\begin{equation}
+	\frac { { e }_{ v },st\vdash { a }_{ 1 }{ \rightarrow  }_{ A }{ v }_{ 1 }\quad { e }_{ v },st\vdash { a }_{ 2 }{ \rightarrow  }_{ A }{ v }_{ 2 } }{ { e }_{ v },st\vdash { a }_{ 1 }=={ a }_{ 2 }{ \rightarrow  }true } ,{ v }_{ 1 }={ v }_{ 2 }
+\end{equation}
+
+\begin{equation}
+	\frac { { e }_{ v },st\vdash { b }_{ 1 }{ \rightarrow  }_{ B }{ B }_{  }\quad { e }_{ v },st\vdash { b }_{ 2 }{ \rightarrow  }_{ B }{ B }_{  } }{ { e }_{ v },st\vdash { b }_{ 1 }=={ b }_{ 2 }{ \rightarrow  }true } 
+\end{equation}
+
+\begin{equation}
+	\frac { { e }_{ v },st\vdash { b }_{ 1 }{ \rightarrow  }_{ B }{ B }_{ 1 }\quad { e }_{ v },st\vdash { b }_{ 2 }{ \rightarrow  }_{ B }{ B }_{ 2 } }{ { e }_{ v },st\vdash { b }_{ 1 }=={ b }_{ 2 }{ \rightarrow  }false } , { B }_{ 1 } \neq { B }_{ 2 } 
+\end{equation}
+\end{frame}
+
 \section{Compiler}
 
     \subsection{Compiler vs. Intrepreter}
@@ -45,9 +76,4 @@
                 \end{figure}
             \end{column}
         \end{columns}
-    \end{frame}
-
-    \subsection{Syntax Analysis}
-    \begin{frame}[t]{Compiler}\framesubtitle{Syntax Analysis}
-        ANTLR ... ?
     \end{frame}
