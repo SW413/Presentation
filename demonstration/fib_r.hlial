@@ -1,11 +1,14 @@
 int64 fib(int n){
+    int64 res = 0; 
     if (n == 0) {
-        return 0;
+        res = 0;
     } else if (n == 1) {
-        return 1;
+        res = 1;
     } else {
-        return (fib(n-1) + fib(n-2));
+        res = (fib(n-1) + fib(n-2));
     }
+
+    return res;
 }
 
 vector<int64>[10] fibM;
