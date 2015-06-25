@@ -22,7 +22,7 @@ ContextualAnalyser contextualAnalyser =
   new ContextualAnalyser(inputFile, errors);
 
 abstractSyntaxTree = 
-  contextualAnalyser.GenerateDecoratedASTFromParseTree(abstractSyntaxTree);
+  contextualAnalyser.ContextualAnalysis(abstractSyntaxTree);
 \end{lstlisting}
 
 
@@ -32,7 +32,7 @@ abstractSyntaxTree =
 \framesubtitle{The Module}
 
 \begin{lstlisting}[caption=The method called from main performing Scope and Type checking and also reporting errors. ,frame=tlrb, basicstyle=\tiny, numbers=none ]
-public BaseASTNode GenerateDecoratedASTFromParseTree(BaseASTNode abstractSyntaxTree) {
+public BaseASTNode ContextualAnalysis(BaseASTNode abstractSyntaxTree) {
   //Add potential imported function declarations
   handleImports(abstractSyntaxTree);
 
