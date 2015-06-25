@@ -98,7 +98,7 @@
     \end{itemize}
     \item Input
     \begin{itemize}
-      \item Token rules
+      \item Lexer rules
       \item Grammar productions
     \end{itemize}
     \item Output
@@ -110,23 +110,35 @@
   \end{itemize}
 \end{frame}
 
+
 \subsection{Tokens and Lexer}
-\begin{frame}{Tokens}
-  \begin{itemize}
-    \item TOKENS!
-  \end{itemize}
-\end{frame}
+\begin{frame}[fragile]{Tokens}
+\framesubtitle{Generating a lexer}
+ Generates tokens from sourcecode
 
-\begin{frame}{Lexer}
-
+\begin{lstlisting}[caption=Example af lexer rules in GAMBL.,frame=tlrb, basicstyle=\tiny, numbers=none]
+INT: 'int' | 'int16' | 'int32' | 'int64' ;
+INTNUM: '0' | SIGN? [1-9][0-9]* ;
+\end{lstlisting}
 \end{frame}
 
 
 \subsection{CFG}
-\begin{frame}{GAMBL's CFG}
-
+\begin{frame}[fragile]{GAMBL's CFG}
+ \begin{lstlisting}[caption=Grammar rules for the expression production in GAMBL.,frame=tlrb, basicstyle=\tiny, numbers=none]
+expression
+    : expression '^' expression                         #powerExpr
+    | expression ( '*' | '/' | '%' | '#' ) expression   #mulExpr
+    | expression ( '+' | '-' ) expression               #addExpr
+    | '(' expression ')'                                #parenExpr
+    | value                                             #valueExpr
+    | ID postUnaryOperator                              #postIDExpr
+    ;
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}{Alternative CFG}
 
 \end{frame}
+
+
