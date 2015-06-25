@@ -2,7 +2,8 @@
 
 #compile errors
 clear
-read
+read 
+clear
 echo -n "gambl matrixmul.hlial"
 read
 java -jar /usr/local/lib/seppuku.jar matrixmul_compiletime.hlial

@@ -13,8 +13,7 @@ int fib(int n){
 
 vector<int>[10] fibV;
 
-for (int i = 0; i < rows(fibV); i++)
-{
+for (int i = 0; i < rows(fibV); i++){
     fibV[i] = fib(i);
 }
 
