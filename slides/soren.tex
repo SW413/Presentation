@@ -95,10 +95,7 @@ public Variable VisitExpressionNode(ExpressionNode node) {
 
   node.setValueType(valueType);
 
-  if (TypeParser.isComplexValueType(valueType) && node.getOperatorType() != null && !OperatorType.isAllowed(node.getOperatorType())){
-    System.out.println("\nOperator not allowed at the moment!\n");
-    System.exit(1);
-  }
+  /* ... */
 
   return new Variable(valueType, "Expr:<" + node.toString() + ">");
 }
@@ -208,7 +205,7 @@ public String VisitForLoopNode(ForLoopNode node) {
 \begin{frame}[fragile,t]{Code Generation}
 \framesubtitle{Template for entry checking}
 \begin{lstlisting}[caption=The template for checking if an entry is out of bounds in a matrix.,frame=tlrb, basicstyle=\tiny, numbers=none]
-if(§ROW §< §MATRIX§.rows && §COL§< §MATRIX§.cols) {
+if(§ROW§ < §MATRIX§.rows && §COL§< §MATRIX§.cols) {
   §CODE§
 } else {
   printf("\nTrying to access entry out of bounds in %s\n", "§MATRIX§");
