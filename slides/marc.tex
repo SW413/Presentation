@@ -11,6 +11,7 @@
 			%Specifikt, men bedre til den specifikke
 			\item Operating Systems
 			%WindowsNoWork, manual library and platform linking
+			%OpenCL Code cant runt, Our compiler runs fine
 		\end{itemize}
 	\end{column}
 	\begin{column}{.48\textwidth}
@@ -28,7 +29,7 @@
 			\item Predefined Operations
 			%Kun enkelte predefinerede operationer udregnes på GPU, og for disse er der intet alternatitv der tillader brug af CPU
 			%Ingen functioner/loops
-			\item Effeciency
+			\item Efficiency
 			%I forhold til de steder hvor GPU udnyttes kontra andre steder den måske kunne udnyttes
 		\end{itemize}
 	\end{frame}
@@ -44,16 +45,17 @@
 			\item Runtime Efficiency
 			%GPU Improves performance, could be improved more however
 			\item Cross Platform Solution vs. Single Platform Solution
+			%Because we use a module design of our compiler, simply changing the code generation module could swap to Cuda/Specific platform targeting
 			\begin{itemize}
 				\item Broader range
-				\item Generelisation reduces efficincy
+				\item Generelisation reduces efficiency
 			\end{itemize}
 			%Laves eventuelt om til eget slide
 			\item Development Process
 			\begin{itemize}
 				\item Iterative
 				\item Realisations in Code Generation
-				\item Functions instead of Operators
+				\item Not enough operators
 			\end{itemize}
 			%IterativUdvikling
 			%Primær gains Når Code Gen noget, reworked tidligere fordi der er fundet yderligere ting der ønskes/nogle ting skulle ændres
@@ -65,7 +67,7 @@
 	\end{column}
 	\begin{column}{.48\textwidth}
       \begin{figure}
-         \includegraphics[width=1\textwidth]{images/benchmark.png}
+         \includegraphics[width=1\textwidth]{images/graph.pdf}
       \end{figure}
     \end{column}
     \end{columns}
@@ -76,8 +78,6 @@
 	\begin{columns}[T]
 	\begin{column}{0.48\textwidth}
 		\begin{itemize}
-			\item Linear Algebra
-			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
 			\item Code Analysis And User Control
 			\begin{itemize}
 				\item More user responsibility
@@ -94,9 +94,6 @@
 			%Platform targeting øger performance på den specifikke platform
 			%Bedre end en universel cross platform løsning
 			%Kan i princippet targetes til hver enkelt GPU størrelse(meget arbejde) men eventuelt lave generationelle versioner(en der passer til ca. 500)?
-			\item Research Fields
-			%Simuleringer specielt
-			%Graph baserede emner
 		\end{itemize}
 	\end{column}
 	\begin{column}{.48\textwidth}
@@ -111,8 +108,6 @@
 	\begin{columns}[T]
 	\begin{column}{0.48\textwidth}
 		\begin{itemize}
-			\item Linear Algebra
-			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
 			\item Code Analysis And User Control
 			%Bedre fordeling af udregninger på platforme, både nativt og explicit har mulighed for at øge runtime efficiency i stor grad, muligheden for explicit gpu brug tillader desuden brugen flere steder end nativt, blot tradeoff er ansvar på bruger
 			%Templates reducere effeciency
@@ -129,9 +124,6 @@
 			%Platform targeting øger performance på den specifikke platform
 			%Bedre end en universel cross platform løsning
 			%Kan i princippet targetes til hver enkelt GPU størrelse(meget arbejde) men eventuelt lave generationelle versioner(en der passer til ca. 500)?
-			\item Research Fields
-			%Simuleringer specielt
-			%Graph baserede emner
 		\end{itemize}
 	\end{column}
 	\begin{column}{.48\textwidth}
@@ -146,8 +138,6 @@
 	\begin{columns}[T]
 	\begin{column}{0.48\textwidth}
 		\begin{itemize}
-			\item Linear Algebra
-			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
 			\item Code Analysis And User Control
 			%Bedre fordeling af udregninger på platforme, både nativt og explicit har mulighed for at øge runtime efficiency i stor grad, muligheden for explicit gpu brug tillader desuden brugen flere steder end nativt, blot tradeoff er ansvar på bruger
 			%Templates reducere effeciency
@@ -157,21 +147,12 @@
 			%a+b+c er 2 kernels frem for 1
 			\item Platform Targeting
 			\begin{itemize}
-				\item More efficient ressource usage
-				\item Specifications specialization
+				\item More efficient resource usage
+				\item Specifications specialisation
 			\end{itemize}
 			%Platform targeting øger performance på den specifikke platform
 			%Bedre end en universel cross platform løsning
 			%Kan i princippet targetes til hver enkelt GPU størrelse(meget arbejde) men eventuelt lave generationelle versioner(en der passer til ca. 500)?
-			\item Research Fields
-			%Simuleringer specielt
-			%Graph baserede emner
-			\begin{itemize}
-				\item Data Structures
-				\item Functions
-				\item Operations
-				\item Algorithms
-			\end{itemize}
 		\end{itemize}
 	\end{column}
 	\begin{column}{.48\textwidth}
