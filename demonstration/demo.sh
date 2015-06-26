@@ -9,6 +9,7 @@ read
 java -jar /usr/local/lib/seppuku.jar matrixmul_compiletime.hlial
 read
 less matrixmul_compiletime.hlial
+less matrixmul_runtime.hlial
 clear
 #runtime errors
 echo -n "gambl matrixmul.hlial" 
@@ -24,6 +25,7 @@ read
 cd ..
 rm -rf codeout
 less matrixmul_runtime.hlial
+less matrixmul_clean.hlial
 clear
 #clean
 echo -n "gambl matrixmul.hlial" 
