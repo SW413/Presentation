@@ -2,6 +2,8 @@
 
 	\subsection{Discussion}
 	\begin{frame}[t]{Project Review}\framesubtitle{Parallel Computing Platform}
+	\begin{columns}[T]
+	\begin{column}{0.48\textwidth}
 		\begin{itemize}
 			\item OpenCL
 			%Different supported versions for each manufacturer
@@ -10,6 +12,13 @@
 			\item Operating Systems
 			%WindowsNoWork, manual library and platform linking
 		\end{itemize}
+	\end{column}
+	\begin{column}{.48\textwidth}
+      \begin{figure}
+         \includegraphics[width=1\textwidth]{images/opencloptimisation.png}
+      \end{figure}
+    \end{column}
+    \end{columns}
 	\end{frame}
 
 	\begin{frame}[t]{Project Review}\framesubtitle{Seamless GPU Usage}
@@ -26,16 +35,26 @@
 
 	\subsection{Conclusion}
 	\begin{frame}[t]{Project Review}\framesubtitle{Conclusion}
+	\begin{columns}[T]
+	\begin{column}{0.48\textwidth}
 		\begin{itemize}
 		%Eventuelt starte med problemformulering/sprog kriterier?
 			\item Seamless GPU utilisation
 			 %+Read and writability
 			\item Runtime Efficiency
 			%GPU Improves performance, could be improved more however
-			\item Error Reporting
-			\item Cross Platform Solution vs. Single Platform Solution 
+			\item Cross Platform Solution vs. Single Platform Solution
+			\begin{itemize}
+				\item Broader range
+				\item Generelisation reduces efficincy
+			\end{itemize}
 			%Laves eventuelt om til eget slide
 			\item Development Process
+			\begin{itemize}
+				\item Iterative
+				\item Realisations in Code Generation
+				\item Functions instead of Operators
+			\end{itemize}
 			%IterativUdvikling
 			%Primær gains Når Code Gen noget, reworked tidligere fordi der er fundet yderligere ting der ønskes/nogle ting skulle ændres
 			%Functions > Operators changes to Operators > Functions i forhold til matrice operationer
@@ -43,14 +62,28 @@
 			%Explicit fordi * kan have flere betydninger i matrice verdenen - kernels gav problemer som funktioner
 			%Modulær fordeling gavner også her
 		\end{itemize}
+	\end{column}
+	\begin{column}{.48\textwidth}
+      \begin{figure}
+         \includegraphics[width=1\textwidth]{images/benchmark.png}
+      \end{figure}
+    \end{column}
+    \end{columns}
 	\end{frame}
 
 	\subsection{Future Works}
 	\begin{frame}[t]{Project Review}\framesubtitle{Future Works}
+	\begin{columns}[T]
+	\begin{column}{0.48\textwidth}
 		\begin{itemize}
 			\item Linear Algebra
 			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
 			\item Code Analysis And User Control
+			\begin{itemize}
+				\item More user responsibility
+				\item Can increase runtime efficiency
+				\item Templates are not an effective solution
+			\end{itemize}
 			%Bedre fordeling af udregninger på platforme, både nativt og explicit har mulighed for at øge runtime efficiency i stor grad, muligheden for explicit gpu brug tillader desuden brugen flere steder end nativt, blot tradeoff er ansvar på bruger
 			%Templates reducere effeciency
 			\item Kernel Improvements
@@ -64,6 +97,75 @@
 			\item Research Fields
 			%Simuleringer specielt
 			%Graph baserede emner
+		\end{itemize}
+	\end{column}
+	\begin{column}{.48\textwidth}
+      \begin{figure}
+         \includegraphics[width=1\textwidth]{images/GPUMemoryClear.png}
+      \end{figure}
+    \end{column}
+    \end{columns}
+	\end{frame}
+
+	\begin{frame}[t]{Project Review}\framesubtitle{Future Works}
+	\begin{columns}[T]
+	\begin{column}{0.48\textwidth}
+		\begin{itemize}
+			\item Linear Algebra
+			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
+			\item Code Analysis And User Control
+			%Bedre fordeling af udregninger på platforme, både nativt og explicit har mulighed for at øge runtime efficiency i stor grad, muligheden for explicit gpu brug tillader desuden brugen flere steder end nativt, blot tradeoff er ansvar på bruger
+			%Templates reducere effeciency
+			\item Kernel Improvements
+			\begin{itemize}
+				\item Memory handling
+				\item Nvidia different memory hierarchy, Warps
+				\item Templates
+			\end{itemize}
+			%Bedre brug af memory, platform targeting virker yderligere her da Nvidia har anderledes architectur(Warps i thread hierarchy(thread>warp>ThreadBlock>Grid/Thread>WorkGroup>NDRange))
+			%Possible improvements instead of Templates?(making functions available)
+			%a+b+c er 2 kernels frem for 1
+			\item Platform Targeting
+			%Platform targeting øger performance på den specifikke platform
+			%Bedre end en universel cross platform løsning
+			%Kan i princippet targetes til hver enkelt GPU størrelse(meget arbejde) men eventuelt lave generationelle versioner(en der passer til ca. 500)?
+			\item Research Fields
+			%Simuleringer specielt
+			%Graph baserede emner
+		\end{itemize}
+	\end{column}
+	\begin{column}{.48\textwidth}
+      \begin{figure}
+         \includegraphics[width=1\textwidth]{images/GPUMemoryClear.png}
+      \end{figure}
+    \end{column}
+    \end{columns}
+	\end{frame}
+
+	\begin{frame}[t]{Project Review}\framesubtitle{Future Works}
+	\begin{columns}[T]
+	\begin{column}{0.48\textwidth}
+		\begin{itemize}
+			\item Linear Algebra
+			%Mere end blot simple matrix operationer kunne være til gavn for programmøren 
+			\item Code Analysis And User Control
+			%Bedre fordeling af udregninger på platforme, både nativt og explicit har mulighed for at øge runtime efficiency i stor grad, muligheden for explicit gpu brug tillader desuden brugen flere steder end nativt, blot tradeoff er ansvar på bruger
+			%Templates reducere effeciency
+			\item Kernel Improvements
+			%Bedre brug af memory, platform targeting virker yderligere her da Nvidia har anderledes architectur(Warps i thread hierarchy(thread>warp>ThreadBlock>Grid/Thread>WorkGroup>NDRange))
+			%Possible improvements instead of Templates?(making functions available)
+			%a+b+c er 2 kernels frem for 1
+			\item Platform Targeting
+			\begin{itemize}
+				\item More efficient ressource usage
+				\item Specifications specialization
+			\end{itemize}
+			%Platform targeting øger performance på den specifikke platform
+			%Bedre end en universel cross platform løsning
+			%Kan i princippet targetes til hver enkelt GPU størrelse(meget arbejde) men eventuelt lave generationelle versioner(en der passer til ca. 500)?
+			\item Research Fields
+			%Simuleringer specielt
+			%Graph baserede emner
 			\begin{itemize}
 				\item Data Structures
 				\item Functions
@@ -71,4 +173,11 @@
 				\item Algorithms
 			\end{itemize}
 		\end{itemize}
+	\end{column}
+	\begin{column}{.48\textwidth}
+      \begin{figure}
+         \includegraphics[width=1\textwidth]{images/GPUMemoryClear.png}
+      \end{figure}
+    \end{column}
+    \end{columns}
 	\end{frame}
